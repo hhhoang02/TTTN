@@ -23,13 +23,23 @@ import {
   View,
 } from 'react-native';
 import { BottomTab } from './src/Tab/TabNavigation';
+import { DefaultTheme, Provider } from 'react-native-paper';
 
 
 function App(): JSX.Element {
-
+  const theme = {
+    ...DefaultTheme,
+    colors: {
+      ...DefaultTheme.colors,
+      secondaryContainer: 'transparent',
+      // Use transparent to disable the little highlighting oval
+    },
+  };
   return (
-    //<DangNhap />
-   <BottomTab />
+    <Provider theme={{version: 2}}>
+      {/* <DangNhap /> */}
+      <BottomTab />
+    </Provider>
   );
 }
 

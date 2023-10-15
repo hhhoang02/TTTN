@@ -1,5 +1,6 @@
-import Icon from "react-native-vector-icons/Ionicons";
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import TrangChuNavigation from "../Stack/StackNavigation";
+import COLOR, { BG_COLOR } from "../utilities";
 
 export enum RootTabScreenENum {
     StackTrangChu = 'Trang chủ',
@@ -25,18 +26,30 @@ export const RootBottomTab = () => {
     ]
     return Screens;
 }
-export const configTab = ({route}: any) => {
+export const configTab = ({ route }: any) => {
+    let color: any
     return {
-        tabBarIcon: ({ color, focused }: any) => {
+        tabBarIcon: ({ focused }: any) => {
             let iconName: any;
+            color = focused ? BG_COLOR : COLOR.gray
             console.log(route.name);
-            
+
             if (route.name === RootTabScreenENum.StackTrangChu) {
-                iconName = focused ? 'home-sharp' : 'home-outline';
+                iconName = focused ? 'home' : 'home-outline';
+            } else if (route.name === RootTabScreenENum.StackLichSu) {
+                iconName = focused ? 'history' : 'history';
             }
+            else if (route.name === RootTabScreenENum.StackLienHe) {
+                iconName = focused ? 'phone' : 'phone-outline';
+            }
+            else if (route.name === RootTabScreenENum.StackCaiDat) {
+                iconName = focused ? 'cog' : 'cog-outline';
+            }
+
             return (
-                <Icon name={iconName} size={24} color={color} />
+                <Icon name={iconName} size={27} color={color} />
             );
         },
+
     }
 }

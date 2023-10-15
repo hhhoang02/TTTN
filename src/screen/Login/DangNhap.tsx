@@ -1,6 +1,6 @@
 import { Alert, Image, Modal, Pressable, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useState } from 'react'
-import { BG_COLOR, BUTTON_COLOR, HEIGHT, WIDTH } from '../../utilities';
+import COLOR, { BG_COLOR, BUTTON_COLOR, HEIGHT, WIDTH } from '../../utilities';
 
 interface Item {
     id: number;
@@ -19,7 +19,7 @@ const DangNhap = () => {
         )
     }
     return (
-        <View style={{ backgroundColor: '#ffffff', width: WIDTH, height: HEIGHT, justifyContent: 'center' }}>
+        <View style={{ backgroundColor: COLOR.white, width: WIDTH, height: HEIGHT, justifyContent: 'center' }}>
             <Modal
                 animationType="slide"
                 transparent={true}
@@ -48,16 +48,16 @@ const DangNhap = () => {
             <StatusBar barStyle="light-content" backgroundColor={BG_COLOR} />
             <View style={{ position: 'absolute', top: 0, height: HEIGHT / 3, width: WIDTH, backgroundColor: BG_COLOR, borderBottomLeftRadius: 35, borderBottomRightRadius: 35 }}>
             </View>
-            <View style={{ alignItems: 'center', backgroundColor: '#ffffff', borderRadius: 20, borderWidth: 0.5, borderColor: '#d7d7d7', width: WIDTH / 1.3, height: HEIGHT / 2, alignSelf: 'center' }}>
-                <Image style={{ width: 180, height: 90, marginTop: 30 }} source={require('../../../a.png')} />
+            <View style={{ alignItems: 'center', backgroundColor: COLOR.white, borderRadius: 20, borderWidth: 0.5, borderColor: '#d7d7d7', width: WIDTH / 1.3, height: HEIGHT / 2, alignSelf: 'center' }}>
+                <Image style={{ width: 180, height: 90, marginTop: 30 }} source={require('../../assets/logo.png')} />
                 <View style={{ width: '100%', alignItems: 'center', paddingTop: 60, rowGap: 40 }}>
                     <TouchableOpacity style={[{ width: '80%', height: 'auto', paddingVertical: 5, borderRadius: 10, justifyContent: 'center', alignItems: 'center', borderWidth: 1, borderColor: '#d6d6d6', backgroundColor: '#ececec' }, styles.elevation]}
                         onPress={() => setModalVisible(true)}>
-                        <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#8b8b8b' }}>{choseSchool}</Text>
+                        <Text style={{ fontSize: 20, fontWeight: 'bold', color: COLOR.gray }}>{choseSchool}</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={[{ width: '80%', height: 45, borderRadius: 10, justifyContent: 'center', alignItems: 'center', borderWidth: 1, borderColor: '#d6d6d6', backgroundColor: BUTTON_COLOR }, styles.elevation]}>
 
-                        <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#ffffff' }}>Google</Text>
+                        <Text style={{ fontSize: 20, fontWeight: 'bold', color: COLOR.white }}>Google</Text>
                     </TouchableOpacity>
                 </View>
             </View>
