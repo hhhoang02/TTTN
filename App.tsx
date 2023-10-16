@@ -24,21 +24,18 @@ import {
 } from 'react-native';
 import { BottomTab } from './src/Tab/TabNavigation';
 import { DefaultTheme, Provider } from 'react-native-paper';
+import DangNhap from './src/screen/DangNhap/Dangnhap';
 
 
 function App(): JSX.Element {
-  const theme = {
-    ...DefaultTheme,
-    colors: {
-      ...DefaultTheme.colors,
-      secondaryContainer: 'transparent',
-      // Use transparent to disable the little highlighting oval
-    },
-  };
+  const [isLogin, setIsLogin] = useState<boolean>(true);
   return (
-    <Provider theme={{version: 2}}>
+    <Provider theme={{ version: 2 }}>
       {/* <DangNhap /> */}
-      <BottomTab />
+      {isLogin ?
+        <BottomTab />
+        : <DangNhap />
+      }
     </Provider>
   );
 }

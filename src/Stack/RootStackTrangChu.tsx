@@ -1,4 +1,4 @@
-import TrangChu from "../screen/Home/TrangChu";
+import TrangChu from "../screen/TrangChu/Trangchu";
 
 export enum RootStackTrangChuEnum {
     TrangChu = 'TrangChu',

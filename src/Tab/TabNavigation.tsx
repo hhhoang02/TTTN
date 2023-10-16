@@ -1,8 +1,5 @@
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import TrangChu from '../screen/Home/TrangChu';
 import { NavigationContainer } from '@react-navigation/native';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
-import TrangChuNavigation from '../Stack/StackNavigation';
 import { RootBottomTab, configTab } from './RootTab';
 import COLOR, { BG_COLOR } from '../utilities';
 const Tab = createMaterialBottomTabNavigator();

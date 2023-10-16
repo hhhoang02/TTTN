@@ -1,5 +1,5 @@
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
-import TrangChuNavigation from "../Stack/StackNavigation";
+import { CaiDatNavigation, LichSuNavigation, LienHeNavigation, TrangChuNavigation } from "../Stack/StackNavigation";
 import COLOR, { BG_COLOR } from "../utilities";
 
 export enum RootTabScreenENum {
@@ -20,9 +20,9 @@ export const RootBottomTab = () => {
 
     const Screens: any[] = [
         { id: 1, name: RootTabScreenENum.StackTrangChu, component: TrangChuNavigation, option: {} },
-        { id: 2, name: RootTabScreenENum.StackLichSu, component: TrangChuNavigation, option: {} },
-        { id: 3, name: RootTabScreenENum.StackLienHe, component: TrangChuNavigation, option: {} },
-        { id: 4, name: RootTabScreenENum.StackCaiDat, component: TrangChuNavigation, option: {} },
+        { id: 2, name: RootTabScreenENum.StackLichSu, component: LichSuNavigation, option: {} },
+        { id: 3, name: RootTabScreenENum.StackLienHe, component: LienHeNavigation, option: {} },
+        { id: 4, name: RootTabScreenENum.StackCaiDat, component: CaiDatNavigation, option: {} },
     ]
     return Screens;
 }
