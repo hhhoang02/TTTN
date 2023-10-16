@@ -45,7 +45,6 @@ const DangNhap = () => {
                     </View>
                 </View>
             </Modal>
-            <StatusBar barStyle="light-content" backgroundColor={BG_COLOR} />
             <View style={{ position: 'absolute', top: 0, height: HEIGHT / 3, width: WIDTH, backgroundColor: BG_COLOR, borderBottomLeftRadius: 35, borderBottomRightRadius: 35 }}>
             </View>
             <View style={{ alignItems: 'center', backgroundColor: COLOR.white, borderRadius: 20, borderWidth: 0.5, borderColor: '#d7d7d7', width: WIDTH / 1.3, height: HEIGHT / 2, alignSelf: 'center' }}>

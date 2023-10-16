@@ -40,7 +40,6 @@ const TrangChu = () => {
                     keyExtractor={(item) => item.id.toString()}
                 />
             </View>
-
         </View>
     )
 }
