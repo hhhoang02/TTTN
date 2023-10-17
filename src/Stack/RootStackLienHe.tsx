@@ -1,4 +1,4 @@
-import LienHe from "../screen/LienHe/LienHe";
+import LienHe from "../screen/LienHe/Lienhe";
 
 export enum RootStackLienHeEnum {
     LienHe = 'LienHe',
