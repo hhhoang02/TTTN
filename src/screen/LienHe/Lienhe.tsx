@@ -1,7 +1,9 @@
-import { FlatList, Image, StyleSheet, Text, View } from 'react-native'
+import { FlatList, Image, Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import COLOR, { HEIGHT, PADDING_HORIZONTAL, PADDING_TOP, WIDTH } from '../../utilities'
 import Icon from 'react-native-vector-icons/Ionicons'
+import { RootStackLienHeEnum } from '../../Stack/RootStackLienHe'
+import { NativeStackHeaderProps } from '@react-navigation/native-stack'
 
 interface Item {
   id: number,
@@ -10,9 +12,12 @@ interface Item {
   chucvu: string
 }
 
-const renderItem = ({ item }: { item: Item }) => {
+const RenderItem = (props: any) => {
+  const { data } = props;
+  const { navigation }: NativeStackHeaderProps = props
+  const item: Item = data.item;
   return (
-    <View style={{ width: '100%', height: 'auto', flexDirection: 'row', borderRadius: 10, backgroundColor: '#e0e0e0', marginBottom: 5, padding: 10 }}>
+    <Pressable onPress={() => navigation.navigate(RootStackLienHeEnum.Lienhe_Detail)} style={{ width: '100%', height: 'auto', flexDirection: 'row', borderRadius: 10, backgroundColor: '#e0e0e0', marginBottom: 5, padding: 10 }}>
       <Image source={item.avatar} style={{ width: 60, height: 60, borderRadius: 50, borderWidth: 1, borderColor: 'white' }} />
       <View style={{ flexDirection: 'column', justifyContent: 'center', paddingLeft: 20, rowGap: 5 }}>
         <Text style={{
@@ -29,12 +34,13 @@ const renderItem = ({ item }: { item: Item }) => {
         }}>{item.chucvu}</Text>
       </View>
       <Icon name='chevron-forward' size={26} style={{ alignSelf: 'center', position: 'absolute', right: '5%' }} />
-    </View >
+    </Pressable >
   )
 }
 
 
-const LienHe = () => {
+const LienHe = ({ navigation }: any) => {
+
   return (
     <View style={{ width: WIDTH, height: HEIGHT, paddingHorizontal: PADDING_HORIZONTAL, paddingTop: PADDING_TOP }}>
       <View style={{ justifyContent: 'center', alignItems: 'center', flexDirection: 'row', marginBottom: WIDTH / 5 }}>
@@ -47,7 +53,7 @@ const LienHe = () => {
           <FlatList
             scrollEnabled={false}
             data={data}
-            renderItem={renderItem}
+            renderItem={(item) => <RenderItem data={item} navigation={navigation} />}
             keyExtractor={(item) => item.id.toString()}
           />
         </View>
@@ -56,7 +62,7 @@ const LienHe = () => {
           <FlatList
             scrollEnabled={false}
             data={data}
-            renderItem={renderItem}
+            renderItem={(item) => <RenderItem data={item} navigation={navigation} />}
             keyExtractor={(item) => item.id.toString()}
           />
         </View>
