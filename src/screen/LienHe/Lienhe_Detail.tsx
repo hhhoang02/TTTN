@@ -21,11 +21,21 @@ const Lienhe_Detail = (props: any) => {
             </View>
             <View style={{ backgroundColor: COLOR.white, height: HEIGHT / 1.5, width: WIDTH, position: 'absolute', bottom: 0, borderTopLeftRadius: 35, borderTopRightRadius: 35, alignItems: 'flex-start', paddingVertical: 30, rowGap: 10, paddingLeft: 25 }} >
                 <View style={{ width: '100%', height: 'auto', flexDirection: 'row' }}>
-                    <View style={{ flexDirection: 'column' }}>
-                        <Text>Số điện thoại</Text>
-                        <Text>0345625243</Text>
+                    <View style={{ flexDirection: 'column', rowGap: 5 }}>
+                        <Text style={{
+                            color: COLOR.gray,
+                            fontSize: 18,
+                            fontFamily: 'Poppins',
+                            fontWeight: '400',
+                        }}>Số điện thoại</Text>
+                        <Text style={{
+                            color: COLOR.black,
+                            fontSize: 18,
+                            fontFamily: 'Poppins',
+                            fontWeight: '400',
+                        }}>0345625243</Text>
                     </View>
-                    <Icon name='chevron-forward' size={26} style={{ position: 'absolute', right: 20 }} />
+                    <Icon name='call' size={26} color={COLOR.orange} style={{ backgroundColor: '#E9ECEF', position: 'absolute', right: 20, padding: 20, borderRadius: 50, alignSelf: 'center' }} />
                 </View>
             </View>
 
