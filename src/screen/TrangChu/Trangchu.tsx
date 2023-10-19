@@ -2,6 +2,8 @@ import { FlatList, FlatListProps, Image, ListRenderItem, ListRenderItemInfo, Pre
 import React from 'react'
 import COLOR, { BG_COLOR, HEIGHT, PADDING_HORIZONTAL, PADDING_TOP, WIDTH } from '../../utilities'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import { NativeStackHeaderProps } from '@react-navigation/native-stack'
+import { RootStackTrangChuEnum } from '../../Stack/RootStackTrangChu'
 
 interface SERVICE_ONLINE {
     id: number,
@@ -18,7 +20,7 @@ const itemServiceOnline = ({ item }: { item: SERVICE_ONLINE }) => (
         <Text style={{ color: COLOR.white }}>{item.description}</Text>
     </TouchableOpacity>
 )
-const TrangChu = () => {
+const TrangChu = ({ navigation }: NativeStackHeaderProps) => {
     return (
         <View style={{ backgroundColor: BG_COLOR, width: WIDTH, height: HEIGHT, paddingHorizontal: PADDING_HORIZONTAL, paddingTop: PADDING_TOP }}>
             <View style={{ justifyContent: 'center', alignItems: 'center', flexDirection: 'row' }}>
@@ -26,9 +28,9 @@ const TrangChu = () => {
                     <Image style={{ width: 50, height: 50, backgroundColor: COLOR.white, borderRadius: 50 }} source={require('../../assets/logo.png')} />
                     <Text style={{ fontSize: 20, fontWeight: 'bold', color: COLOR.white, marginTop: 10 }}>Lê Trung Hậu Nhỏ</Text>
                 </View>
-                <View style={{ position: 'absolute', right: 0 }}>
+                <Pressable onPress={() => navigation.navigate(RootStackTrangChuEnum.ThongBao)} style={{ position: 'absolute', right: 0 }}>
                     <Icon name='bell-outline' size={30} color={COLOR.white} />
-                </View>
+                </Pressable>
             </View>
             <View style={{ backgroundColor: COLOR.white, height: HEIGHT / 1.3, width: WIDTH, position: 'absolute', bottom: 0, borderTopLeftRadius: 35, borderTopRightRadius: 35, alignItems: 'center', paddingVertical: 20, rowGap: 10 }} >
                 <Text style={{ color: '#B85B56', fontSize: 20, fontWeight: '700' }}>Dịch vụ trực tuyến</Text>
