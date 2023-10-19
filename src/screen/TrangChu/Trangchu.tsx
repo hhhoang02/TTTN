@@ -38,6 +38,7 @@ const TrangChu = () => {
                     columnWrapperStyle={{ columnGap: 10 }}
                     renderItem={itemServiceOnline}
                     keyExtractor={(item) => item.id.toString()}
+                    showsVerticalScrollIndicator={false}
                 />
             </View>
         </View>
