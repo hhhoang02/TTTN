@@ -8,7 +8,9 @@ export enum RootStackLichSuEnum {
 
 export type RootStackParamListLichSu = {
     LichSu: undefined,
-    LichSu_ChiTiet: undefined
+    LichSu_ChiTiet: {
+        data: any
+    }
 }
 
 
