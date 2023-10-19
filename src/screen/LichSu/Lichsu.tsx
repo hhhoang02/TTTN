@@ -1,7 +1,9 @@
-import { FlatList, Image, StyleSheet, Text, View } from 'react-native'
+import { FlatList, Image, Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import COLOR, { BG_COLOR, HEIGHT, PADDING_HORIZONTAL, PADDING_TOP, WIDTH } from '../../utilities'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import { NativeStackHeaderProps } from '@react-navigation/native-stack'
+import { RootStackLichSuEnum } from '../../Stack/RootStackLichSu'
 
 
 interface LichSu {
@@ -13,9 +15,11 @@ interface LichSu {
     sdt: string
 }
 
-const renderItem = ({ item }: { item: LichSu }) => {
+const RenderItem = (props: any) => {
+    const { item } = props.data;
+    const { navigation }: NativeStackHeaderProps = props;
     return (
-        <View style={{ flexDirection: 'row', paddingHorizontal: PADDING_HORIZONTAL, alignItems: 'center', width: WIDTH, height: HEIGHT / 9, marginBottom: 5, columnGap: 15, borderBottomWidth: 1, borderColor: '#d9d9d9' }}>
+        <Pressable onPress={() => navigation.navigate(RootStackLichSuEnum.LichSu_ChiTiet)} style={{ flexDirection: 'row', paddingHorizontal: PADDING_HORIZONTAL, alignItems: 'center', width: WIDTH, height: HEIGHT / 9, marginBottom: 5, columnGap: 15, borderBottomWidth: 1, borderColor: '#d9d9d9' }}>
             <Image source={item.avatar} style={{ width: 60, height: 60, borderRadius: 50, borderWidth: 0.5, borderColor: COLOR.gray }} />
             <View style={{ flexDirection: 'column', justifyContent: 'center', rowGap: 5 }}>
                 <Text style={{ color: '#804F1E', fontSize: 19, fontFamily: 'Helvetica Neue', fontWeight: '700', letterSpacing: 0.60, }}>{item.suco}</Text>
@@ -25,10 +29,10 @@ const renderItem = ({ item }: { item: LichSu }) => {
                     <Text style={styles.textBottom}> SĐT: {item.sdt}</Text>
                 </View>
             </View>
-        </View>
+        </Pressable>
     )
 }
-const LichSu = () => {
+const LichSu = ({ navigation }: NativeStackHeaderProps) => {
     return (
         <View style={{ backgroundColor: BG_COLOR, width: WIDTH, height: HEIGHT, paddingHorizontal: PADDING_HORIZONTAL, paddingTop: PADDING_TOP }}>
             <View style={{ justifyContent: 'center', alignItems: 'center', flexDirection: 'row' }}>
@@ -44,7 +48,7 @@ const LichSu = () => {
                 <Text style={{ color: '#593E67', fontSize: 24, fontFamily: 'Helvetica Neue', fontWeight: '700' }}>LỊCH SỬ</Text>
                 <FlatList
                     data={data}
-                    renderItem={renderItem}
+                    renderItem={(item) => <RenderItem data={item} navigation={navigation} />}
                     keyExtractor={(item) => item.id.toString()}
                 />
             </View>
