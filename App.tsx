@@ -31,7 +31,6 @@ import DSSuCo from './src/screen/TrangChu/DSSuCo';
 function App(): JSX.Element {
   const [isLogin, setIsLogin] = useState<boolean>(true);
   return (
-
     <Provider theme={{ version: 2 }}>
       <StatusBar barStyle="light-content" backgroundColor={BG_COLOR} />
       {isLogin ?

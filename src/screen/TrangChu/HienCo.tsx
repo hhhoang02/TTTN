@@ -11,6 +11,7 @@ import React from 'react';
 interface HienCo {
   id: number;
   title: string;
+  time: string,
   name: string;
   img: any;
   toa: string;
@@ -19,11 +20,12 @@ interface HienCo {
   ngay: string;
 }
 const renderItem = ({item}: any) => {
-  const {id, title, name, img, toa, phong, gio, ngay} = item;
+  const {id, title, time, name, img, toa, phong, gio, ngay} = item;
   return (
     <View style={styles.containerPD}>
       <View style={styles.title}>
-        <Text  style={{fontSize: 17, fontWeight: '700', color:'black'}}>{title}</Text>
+        <Text style={{fontSize: 17, fontWeight: '700', color:'black'}}>{title}</Text>
+        <Text style={{fontSize: 17, fontWeight: '500', color:'red', marginRight: 20}}>{time}</Text>
       </View>
       <View style={styles.content}>
         <View style={styles.left}>
@@ -78,7 +80,9 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   title: {
+    flexDirection: 'row',
     width: '100%',
+    justifyContent: 'space-between'
   },
   containerPD: {
     width: '100%',
@@ -99,6 +103,7 @@ const data: HienCo[] = [
   {
     id: 1,
     title: 'Sự cố máy chiếu hỏng',
+    time: '11:50',
     name: 'Lê Văn Hiếu',
     img: require('../../assets/Profile.png'),
     toa: 'Tòa T',
@@ -109,6 +114,7 @@ const data: HienCo[] = [
   {
     id: 2,
     title: 'Sự cố máy chiếu hỏng',
+    time: '11:50',
     name: 'Lê Văn Hiếu',
     img: require('../../assets/Profile.png'),
     toa: 'Tòa T',
@@ -119,6 +125,7 @@ const data: HienCo[] = [
   {
     id: 3,
     title: 'Sự cố máy chiếu hỏng',
+    time: '11:50',
     name: 'Lê Văn Hiếu',
     img: require('../../assets/Profile.png'),
     toa: 'Tòa T',
@@ -129,6 +136,7 @@ const data: HienCo[] = [
   {
     id: 4,
     title: 'Sự cố máy chiếu hỏng',
+    time: '11:50',
     name: 'Lê Văn Hiếu',
     img: require('../../assets/Profile.png'),
     toa: 'Tòa T',
@@ -139,6 +147,7 @@ const data: HienCo[] = [
   {
     id: 5,
     title: 'Sự cố máy chiếu hỏng',
+    time: '11:50',
     name: 'Lê Văn Hiếu',
     img: require('../../assets/Profile.png'),
     toa: 'Tòa T',
@@ -149,6 +158,7 @@ const data: HienCo[] = [
   {
     id: 6,
     title: 'Sự cố máy chiếu hỏng',
+    time: '11:50',
     name: 'Lê Văn Hiếu',
     img: require('../../assets/Profile.png'),
     toa: 'Tòa T',
