@@ -3,10 +3,12 @@ import React from 'react'
 import Icon from 'react-native-vector-icons/Ionicons'
 import COLOR, { BG_COLOR, HEIGHT, PADDING_HORIZONTAL, PADDING_TOP, WIDTH } from '../../utilities'
 import { NavigationProp, ParamListBase } from '@react-navigation/native'
-import { NativeStackHeaderProps, NativeStackNavigationProp } from '@react-navigation/native-stack'
+import { NativeStackHeaderProps, NativeStackNavigationProp, NativeStackScreenProps } from '@react-navigation/native-stack'
+import { RootStackParamListLienHe } from '../../Stack/RootStackLienHe'
 
-const Lienhe_Detail = (props: any) => {
-    const { navigation }: NativeStackHeaderProps = props;
+type Props = NativeStackScreenProps<RootStackParamListLienHe>
+
+const Lienhe_Detail = ({ route, navigation }: Props) => {
     return (
         <View style={{ backgroundColor: BG_COLOR, width: WIDTH, height: HEIGHT, paddingHorizontal: PADDING_HORIZONTAL, paddingTop: PADDING_TOP }}>
             <Pressable onPress={() => navigation.goBack()}>

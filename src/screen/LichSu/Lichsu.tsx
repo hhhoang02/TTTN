@@ -19,7 +19,7 @@ const RenderItem = (props: any) => {
     const { item } = props.data;
     const { navigation }: NativeStackHeaderProps = props;
     return (
-        <Pressable onPress={() => navigation.navigate(RootStackLichSuEnum.LichSu_ChiTiet)} style={{ flexDirection: 'row', paddingHorizontal: PADDING_HORIZONTAL, alignItems: 'center', width: WIDTH, height: HEIGHT / 9, marginBottom: 5, columnGap: 15, borderBottomWidth: 1, borderColor: '#d9d9d9' }}>
+        <Pressable onPress={() => navigation.navigate(RootStackLichSuEnum.LichSu_ChiTiet, { item: item })} style={{ flexDirection: 'row', paddingHorizontal: PADDING_HORIZONTAL, alignItems: 'center', width: WIDTH, height: HEIGHT / 9, marginBottom: 5, columnGap: 15, borderBottomWidth: 1, borderColor: '#d9d9d9' }}>
             <Image source={item.avatar} style={{ width: 60, height: 60, borderRadius: 50, borderWidth: 0.5, borderColor: COLOR.gray }} />
             <View style={{ flexDirection: 'column', justifyContent: 'center', rowGap: 5 }}>
                 <Text style={{ color: '#804F1E', fontSize: 19, fontFamily: 'Helvetica Neue', fontWeight: '700', letterSpacing: 0.60, }}>{item.suco}</Text>
