@@ -7,6 +7,7 @@ import { RootStackTrangChuEnum } from '../../Stack/RootStackTrangChu'
 
 interface SERVICE_ONLINE {
     id: number,
+    screen: string,
     name: string,
     vector: any,
     description: string
@@ -53,18 +54,21 @@ const data: SERVICE_ONLINE[] = [
     {
         id: 1,
         name: 'Báo cáo sự cố',
+        screen: 'Report',
         vector: require('../../assets/BCSC.png'),
         description: 'Gửi báo cáo sự cố tới bộ phận chịu trách nhiệm'
     },
     {
         id: 2,
         name: 'Hỗ trợ CNTT',
+        screen: 'Report',
         vector: require('../../assets/HTCNTT.png'),
         description: 'Yêu cầu hỗ trợ liên quan tới mạng, máy tính,...'
     },
     {
         id: 3,
         name: 'Mượn phòng',
+        screen: 'Report',
         vector: require('../../assets/MP.png'),
         description: 'Quản lý mượn phòng học, hội trường'
     }
