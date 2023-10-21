@@ -154,6 +154,7 @@ const styles = StyleSheet.create({
   },
   description: {
     marginTop: 20,
+    width:'100%',
   },
   button: {
     backgroundColor: 'orange',
