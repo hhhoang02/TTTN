@@ -7,7 +7,6 @@ import {
     Image,
   } from 'react-native';
   import React from 'react';
-  
   interface DangTiepNhan {
     id: number;
     title: string;
