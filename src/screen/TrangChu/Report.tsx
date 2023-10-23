@@ -143,9 +143,7 @@ const styles = StyleSheet.create({
 
   },
   textAreaContainer: {
-    borderColor: 'gray',
-    borderWidth: 1,
-    borderRadius: 10,
+
     width: 350,
     height: 150,
   },
@@ -154,7 +152,10 @@ const styles = StyleSheet.create({
   },
   description: {
     marginTop: 20,
-    width:'100%',
+    width: '100%',
+    borderColor: 'gray',
+    borderWidth: 1,
+    borderRadius: 10,
   },
   button: {
     backgroundColor: 'orange',
