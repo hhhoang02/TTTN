@@ -11,17 +11,30 @@ interface SERVICE_ONLINE {
     name: string,
     vector: any,
     description: string
-
 }
 
-const itemServiceOnline = ({ item }: { item: SERVICE_ONLINE }) => (
-    <TouchableOpacity style={{ width: WIDTH / 2.2, height: WIDTH / 2, backgroundColor: COLOR.orange, marginBottom: 10, alignItems: 'center', flexDirection: 'column', borderRadius: 10, rowGap: 5, padding: 5 }}>
-        <Image source={item.vector} style={{ maxWidth: '90%', maxHeight: 100 }} />
-        <Text style={{ color: COLOR.white, fontSize: 17, fontWeight: '600' }}>{item.name}</Text>
-        <Text style={{ color: COLOR.white }}>{item.description}</Text>
-    </TouchableOpacity>
-)
+
+const RenderItem = (props: any) => {
+
+    
+    const { item } = props.item;
+    console.log(item);
+    
+    const { navigation }: NativeStackHeaderProps = props;
+
+    return (
+        <TouchableOpacity onPress={() => navigation.navigate(RootStackTrangChuEnum.Report)} style={{ width: WIDTH / 2.2, height: WIDTH / 2, backgroundColor: COLOR.orange, marginBottom: 10, alignItems: 'center', flexDirection: 'column', borderRadius: 10, rowGap: 5, padding: 5 }}>
+            <Image source={item.vector} style={{ maxWidth: '90%', maxHeight: 100 }} />
+            <Text style={{ color: COLOR.white, fontSize: 17, fontWeight: '600' }}>{item.name}</Text>
+            <Text style={{ color: COLOR.white }}>{item.description}</Text>
+        </TouchableOpacity>
+    )
+}
+
 const TrangChu = ({ navigation }: NativeStackHeaderProps) => {
+
+
+
     return (
         <View style={{ backgroundColor: BG_COLOR, width: WIDTH, height: HEIGHT, paddingHorizontal: PADDING_HORIZONTAL, paddingTop: PADDING_TOP }}>
             <View style={{ justifyContent: 'center', alignItems: 'center', flexDirection: 'row' }}>
@@ -39,7 +52,7 @@ const TrangChu = ({ navigation }: NativeStackHeaderProps) => {
                     data={data}
                     numColumns={2}
                     columnWrapperStyle={{ columnGap: 10 }}
-                    renderItem={itemServiceOnline}
+                    renderItem={(item) => <RenderItem item={item} navigation={navigation} />}
                     keyExtractor={(item) => item.id.toString()}
                     showsVerticalScrollIndicator={false}
                 />
