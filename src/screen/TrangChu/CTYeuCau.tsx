@@ -12,7 +12,8 @@ import SelectDropdown from 'react-native-select-dropdown';
 
 const CTYeuCau = () => {
   const [click, setClick] = useState<boolean>(false);
-  const countries = ['Egypt', 'Canada', 'Australia', 'Ireland'];
+  const loi = ['Lỗi từ phía giảng viên', 'Lỗi từ phía hệ thống', 'Khác'];
+  const thoigian = ['15 phút', '30 phút', '1 tiếng', '2 tiếng','1 ngày',];
   console.log(click);
 
   return (
@@ -80,8 +81,9 @@ const CTYeuCau = () => {
           }}>
           <View style={{width: '65%'}}>
             <SelectDropdown
-              data={countries}
-              defaultValueByIndex={1}
+              data={loi}
+              defaultButtonText='Lỗi sự cố từ'
+              //defaultValueByIndex={0}
               // defaultValue={{
               //   title: 'England',
               //   image: require('./Images/England.jpg'),
@@ -89,14 +91,16 @@ const CTYeuCau = () => {
               onSelect={(selectedItem, index) => {
                 console.log(selectedItem, index);
               }}
+
               buttonStyle={styles.dropdown3BtnStyle}
               rowStyle={styles.dropdown3RowStyle}
             />
           </View>
           <View style={{width: '33%'}}>
             <SelectDropdown
-              data={countries}
-              defaultValueByIndex={1}
+              data={thoigian}
+              defaultButtonText='Thời gian'
+              //defaultValueByIndex={0}
               // defaultValue={{
               //   title: 'England',
               //   image: require('./Images/England.jpg'),
@@ -177,7 +181,8 @@ const styles = StyleSheet.create({
   },
 
   dropdown3RowStyle: {
-    borderBottomColor: '#444',
+    borderBottomColor: '#F1F4F5',
+    borderRadius: 10,
     height: 50,
   },
   btn: {
